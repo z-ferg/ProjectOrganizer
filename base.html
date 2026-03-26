@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="logo">project<span>/</span>tracker</div>
+    <div class="topbar-right">
+      <div class="avatar">JD</div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <span class="sidebar-label">views</span>
+    <a class="nav-item active" href="#">
+      <span class="nav-icon">◈</span> All Projects
+      <span class="nav-count">8</span>
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">▲</span> High Priority
+      <span class="nav-count">3</span>
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">◷</span> Due Soon
+      <span class="nav-count">2</span>
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">✓</span> Completed
+      <span class="nav-count">4</span>
+    </a>
+
+    <span class="sidebar-label">categories</span>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">·</span> frontend
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">·</span> backend
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">·</span> client
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">·</span> side-project
+    </a>
+
+    <div class="sidebar-footer">
+      <p>v1.0 · local server</p>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="main">
+
+    <div class="page-header">
+      <div>
+        <div class="page-title">All Projects</div>
+        <div class="page-sub">8 projects · 3 in progress</div>
+      </div>
+      <button class="btn btn-accent">+ New project</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-label">TOTAL</div>
+        <div class="stat-value">8</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">IN PROGRESS</div>
+        <div class="stat-value">3</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">COMPLETED</div>
+        <div class="stat-value">4</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">OVERDUE</div>
+        <div class="stat-value" style="color:var(--high)">1</div>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <button class="filter-pill active">all</button>
+      <button class="filter-pill">high</button>
+      <button class="filter-pill">medium</button>
+      <button class="filter-pill">low</button>
+      <button class="filter-pill">overdue</button>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" placeholder="search projects…" />
+      </div>
+    </div>
+
+    <!-- Project list -->
+    <div class="project-list">
+
+      <!-- Project 1 — expanded -->
+      <div class="project-row">
+        <div class="project-summary" onclick="toggleRow(this)">
+          <span class="chevron open">▶</span>
+          <div>
+            <div class="proj-name">Personal website redesign</div>
+            <div class="proj-meta">
+              <span class="priority-dot high"></span>
+              <span class="tag">frontend</span>
+              <span class="tag">side-project</span>
+              <span class="deadline-badge soon">due in 4d</span>
+            </div>
+          </div>
+          <div class="prog-wrap">
+            <div class="prog-bar"><div class="prog-fill" style="width:60%"></div></div>
+            <span class="prog-pct">60%</span>
+          </div>
+          <div class="row-actions">
+            <button class="icon-btn" title="Edit">✎</button>
+            <button class="icon-btn danger" title="Delete">✕</button>
+          </div>
+          <div><!-- spacer --></div>
+        </div>
+        <div class="project-body open">
+          <div class="body-grid">
+            <div class="body-col">
+              <div class="section-label">IDEA</div>
+              <p class="idea-text">Redesign the portfolio from scratch with a dark, editorial feel. Showcase work, writing, and contact. Should feel personal and distinct — not another template clone.</p>
+            </div>
+            <div class="body-col">
+              <div class="section-label">REQUIREMENTS — 3 of 5</div>
+              <div class="req-list">
+                <div class="req-item">
+                  <div class="req-cb done"></div>
+                  <span class="req-text done">Design system & color palette</span>
+                </div>
+                <div class="req-item">
+                  <div class="req-cb done"></div>
+                  <span class="req-text done">Hero section layout</span>
+                </div>
+                <div class="req-item">
+                  <div class="req-cb done"></div>
+                  <span class="req-text done">Work / projects grid</span>
+                </div>
+                <div class="req-item">
+                  <div class="req-cb"></div>
+                  <span class="req-text">Blog / writing page</span>
+                </div>
+                <div class="req-item">
+                  <div class="req-cb"></div>
+                  <span class="req-text">Contact form + email integration</span>
+                </div>
+              </div>
+              <div class="add-req">
+                <input type="text" placeholder="Add a requirement…" />
+                <button class="btn" style="padding:6px 12px;font-size:12px;">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 — collapsed -->
+      <div class="project-row">
+        <div class="project-summary" onclick="toggleRow(this)">
+          <span class="chevron">▶</span>
+          <div>
+            <div class="proj-name">Flask REST API boilerplate</div>
+            <div class="proj-meta">
+              <span class="priority-dot medium"></span>
+              <span class="tag">backend</span>
+              <span class="deadline-badge">due Jul 15</span>
+            </div>
+          </div>
+          <div class="prog-wrap">
+            <div class="prog-bar"><div class="prog-fill" style="width:25%"></div></div>
+            <span class="prog-pct">25%</span>
+          </div>
+          <div class="row-actions">
+            <button class="icon-btn" title="Edit">✎</button>
+            <button class="icon-btn danger" title="Delete">✕</button>
+          </div>
+          <div><!-- spacer --></div>
+        </div>
+        <div class="project-body"></div>
+      </div>
+
+      <!-- Project 3 — overdue -->
+      <div class="project-row">
+        <div class="project-summary" onclick="toggleRow(this)">
+          <span class="chevron">▶</span>
+          <div>
+            <div class="proj-name">Client dashboard — Acme Corp</div>
+            <div class="proj-meta">
+              <span class="priority-dot high"></span>
+              <span class="tag">client</span>
+              <span class="deadline-badge overdue">3d overdue</span>
+            </div>
+          </div>
+          <div class="prog-wrap">
+            <div class="prog-bar"><div class="prog-fill" style="width:80%"></div></div>
+            <span class="prog-pct">80%</span>
+          </div>
+          <div class="row-actions">
+            <button class="icon-btn" title="Edit">✎</button>
+            <button class="icon-btn danger" title="Delete">✕</button>
+          </div>
+          <div><!-- spacer --></div>
+        </div>
+        <div class="project-body"></div>
+      </div>
+
+      <!-- Project 4 — completed -->
+      <div class="project-row" style="opacity:0.6">
+        <div class="project-summary" onclick="toggleRow(this)">
+          <span class="chevron">▶</span>
+          <div>
+            <div class="proj-name">CLI tool — file organiser</div>
+            <div class="proj-meta">
+              <span class="priority-dot low"></span>
+              <span class="tag">side-project</span>
+            </div>
+          </div>
+          <div class="prog-wrap">
+            <div class="prog-bar"><div class="prog-fill done" style="width:100%"></div></div>
+            <span class="prog-pct" style="color:var(--low)">100%</span>
+          </div>
+          <div class="row-actions">
+            <button class="icon-btn" title="Edit">✎</button>
+            <button class="icon-btn danger" title="Delete">✕</button>
+          </div>
+          <div><!-- spacer --></div>
+        </div>
+        <div class="project-body"></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- New project modal (hidden by default, shown for demo) -->
+<div class="modal-overlay" id="modal" style="display:none">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">New project</span>
+      <button class="modal-close" onclick="document.getElementById('modal').style.display='none'">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">PROJECT NAME</label>
+      <input class="form-control" type="text" placeholder="e.g. Personal website redesign" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">IDEA / DESCRIPTION</label>
+      <textarea class="form-control" placeholder="What's this project about? Jot down the core idea."></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">PRIORITY</label>
+        <select class="form-control">
+          <option>High</option>
+          <option selected>Medium</option>
+          <option>Low</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">DEADLINE</label>
+        <input class="form-control" type="date" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">TAGS</label>
+      <input class="form-control" type="text" placeholder="frontend, client, side-project…" />
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="document.getElementById('modal').style.display='none'">Cancel</button>
+      <button class="btn btn-accent">Create project</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleRow(summary) {
+    const chevron = summary.querySelector('.chevron');
+    const body = summary.closest('.project-row').querySelector('.project-body');
+    const isOpen = chevron.classList.toggle('open');
+    body.classList.toggle('open', isOpen);
+  }
+
+  document.querySelector('.btn-accent').addEventListener('click', () => {
+    document.getElementById('modal').style.display = 'flex';
+  });
+</script>
+
+</body>
+</html>
